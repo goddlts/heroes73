@@ -14,13 +14,17 @@ Vue.use(VueRouter)
 
 // 导入英雄列表的组件
 import HeroList from './views/heroes/HeroList.vue'
+import WeaponList from './views/weapons/WeaponList.vue'
+import EquipList from './views/equips/EquipList.vue'
 
 // 创建路由对象
 const router = new VueRouter({
   // 配置路由规则
   routes: [
     { name: 'home', path: '/', redirect: '/heroes'},
-    { name: 'heroes', path: '/heroes', component: HeroList }
+    { name: 'heroes', path: '/heroes', component: HeroList },
+    { name: 'weapons', path: '/weapons', component: WeaponList },
+    { name: 'equips', path: '/equips', component: EquipList },
   ]
 })
 
