@@ -19,6 +19,9 @@ import EquipList from './views/equips/EquipList.vue'
 
 // 创建路由对象
 const router = new VueRouter({
+  // 精确的配置高亮显示的类样式
+  // https://router.vuejs.org/zh/api/#exact-active-class
+  linkExactActiveClass: 'active',
   // 配置路由规则
   routes: [
     { name: 'home', path: '/', redirect: '/heroes'},

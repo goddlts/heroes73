@@ -4,7 +4,7 @@
       <!-- <li class="active"><a href="#">英雄列表</a></li>
       <li><a href="#">武器列表</a></li>
       <li><a href="#">装备列表</a></li> -->
-      <router-link class="active" to="/heroes" tag="li">
+      <router-link to="/heroes" tag="li">
         <a>英雄列表</a>
       </router-link>
       <router-link to="/weapons" tag="li">
