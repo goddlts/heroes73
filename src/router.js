@@ -15,9 +15,13 @@ import HeroAdd from './views/heroes/HeroAdd.vue'
 
 // 创建路由对象
 const router = new VueRouter({
+  // 当url中的路由地址，跟a标签的href中的路由地址精确匹配的时候，添加类样式
   // 精确的配置高亮显示的类样式
   // https://router.vuejs.org/zh/api/#exact-active-class
-  linkExactActiveClass: 'active',
+  // linkExactActiveClass: 'active',
+
+  // 当url中的路由地址，包含a标签的href的路由地址的时候，添加类样式
+  linkActiveClass: 'active',
   // 配置路由规则
   routes: [
     { name: 'home', path: '/', redirect: '/heroes'},
