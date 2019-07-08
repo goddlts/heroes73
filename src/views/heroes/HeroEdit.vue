@@ -22,8 +22,6 @@
 <script>
 // 在组件中获取路由参数  $route.params.id
 
-import axios from 'axios'
-
 export default {
   // 接收外部传递的参数
   props: ['id'],
@@ -45,7 +43,7 @@ export default {
     loadDataById() {
       // 组件中有id的属性
       // 发送请求
-      axios
+      this.axios
         .get(`http://localhost:3000/heroes/${this.id}`)
         .then((response) => {
           const { data, status } = response
@@ -58,7 +56,7 @@ export default {
     // 修改数据的方法
     update() {
       // 发送请求
-      axios
+      this.axios
         .put(`http://localhost:3000/heroes/${this.id}`, this.formData)
         .then((response) => {
           const status = response.status
