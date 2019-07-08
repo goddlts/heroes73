@@ -14,7 +14,7 @@
         </select>
       </div>
       <!-- prevent 阻止默认行为的执行 -->
-      <button class="btn btn-success">提交</button>
+      <button @click.prevent="update" class="btn btn-success">提交</button>
     </form>
   </div>
 </template>
@@ -52,6 +52,23 @@ export default {
           if (status === 200) {
             // 存储数据  { name: '', gender: '', id: 6 }
             this.formData = data
+          }
+        })
+    },
+    // 修改数据的方法
+    update() {
+      // 发送请求
+      axios
+        .put(`http://localhost:3000/heroes/${this.id}`, this.formData)
+        .then((response) => {
+          const status = response.status
+          if (status === 200) {
+            // 修改成功
+            // 跳转回列表组件
+            this.$router.push({ name: 'heroes' })
+          } else {
+            // 修改失败
+            alert('修改失败')
           }
         })
     }
