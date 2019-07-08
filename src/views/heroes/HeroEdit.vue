@@ -20,7 +20,13 @@
 </template>
 
 <script>
+// 在组件中获取路由参数  $route.params.id
+
+import axios from 'axios'
+
 export default {
+  // 接收外部传递的参数
+  props: ['id'],
   data() {
     return {
       // 双向绑定的数据
@@ -30,6 +36,26 @@ export default {
       }
     }
   },
+  // “组件加载完毕”
+  mounted() {
+    this.loadDataById()
+  },
+  methods: {
+    // 根据id加载英雄数据
+    loadDataById() {
+      // 组件中有id的属性
+      // 发送请求
+      axios
+        .get(`http://localhost:3000/heroes/${this.id}`)
+        .then((response) => {
+          const { data, status } = response
+          if (status === 200) {
+            // 存储数据  { name: '', gender: '', id: 6 }
+            this.formData = data
+          }
+        })
+    }
+  }
 }
 </script>
 
