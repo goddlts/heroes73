@@ -12,6 +12,7 @@ import WeaponList from './views/weapons/WeaponList.vue'
 import EquipList from './views/equips/EquipList.vue'
 // 导入添加英雄的组件
 import HeroAdd from './views/heroes/HeroAdd.vue'
+import HeroEdit from './views/heroes/HeroEdit.vue'
 
 // 创建路由对象
 const router = new VueRouter({
@@ -29,6 +30,8 @@ const router = new VueRouter({
     { name: 'weapons', path: '/weapons', component: WeaponList },
     { name: 'equips', path: '/equips', component: EquipList },
     { name: 'heroesadd', path: '/heroes/add', component: HeroAdd },
+    // 动态路由地址 :id
+    { name: 'heroesedit', path: '/heroes/edit/:id', component: HeroEdit },
   ]
 })
 
