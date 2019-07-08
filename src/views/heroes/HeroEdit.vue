@@ -44,7 +44,7 @@ export default {
       // 组件中有id的属性
       // 发送请求
       this.axios
-        .get(`http://localhost:3000/heroes/${this.id}`)
+        .get(`heroes/${this.id}`)
         .then((response) => {
           const { data, status } = response
           if (status === 200) {
@@ -57,7 +57,7 @@ export default {
     update() {
       // 发送请求
       this.axios
-        .put(`http://localhost:3000/heroes/${this.id}`, this.formData)
+        .put(`heroes/${this.id}`, this.formData)
         .then((response) => {
           const status = response.status
           if (status === 200) {

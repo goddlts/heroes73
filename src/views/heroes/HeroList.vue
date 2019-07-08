@@ -50,7 +50,8 @@ export default {
     // 发送请求，获取数据
     loadData() {
       this.axios
-        .get('http://localhost:3000/heroes')
+        // http://localhost:3000/   ---> baseURL
+        .get('heroes')
         .then((response) => {
           // data 数据  status http的状态码
           // console.log(response)
@@ -75,7 +76,7 @@ export default {
       }
       // 删除
       this.axios
-        .delete(`http://localhost:3000/heroes/${id}`)
+        .delete(`heroes/${id}`)
         .then((response) => {
           const { status } = response
           if (status === 200) {
